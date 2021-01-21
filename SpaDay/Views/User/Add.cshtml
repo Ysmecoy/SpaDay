@@ -1,0 +1,66 @@
+﻿@page
+@model SpaDay.Views.User.AddModel
+@{
+}
+
+<h1>Sign Up Form</h1>
+
+@if(ViewBag.error != null)
+{
+    <p>@ViewBag.error</p>
+}
+
+<form method='post' action="/user">
+    Username:
+    <br>
+    @if (ViewBag.error == null)
+    {
+        <input type="text" name="username" />
+    }
+    else
+    {
+        <input type="text" name="username" value="@ViewBag.userName" />
+    }
+    <br>
+    Email:
+    <br />
+    @if (ViewBag.error == null)
+    {
+        <input type="email" name="email" />
+    }
+    else
+    {
+        <input type="email" name="email" value="@ViewBag.eMail" />
+    }
+    <br>
+    Password:
+    <br />
+        <input type="password" name="password" />
+    <br>
+    Confirm Password:
+    <input type="password" name="verify"/>
+    <br />
+    <input type="submit" value="Sign Up" />
+</form>
+
+
+
+
+
+
+
+
+    @*<div class="form-group">
+        <label for="name">Username</label><input name="username" type="text" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label><input name="Email" type="email" />
+    </div>
+    <div class="form-group">
+        <label for="password">password</label><input name="password" type="password" />
+    </div>
+    <div class="form-group">
+        <label for="password">Verify password</label><input name="Verify password" type="password" />
+    </div>*@
+
+ 
